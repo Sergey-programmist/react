@@ -33,17 +33,13 @@ function App() {
   };
   useEffect(() => {
     if (!tempColor) return;
-
     const timer = setTimeout(() => {
       const isValid = /^#([0-9A-Fa-f]{6})$/.test(tempColor);
-
       setHexError(!isValid);
-
       if (isValid) {
         setRgb(hexToRgb(tempColor));
       }
     }, 1000);
-
     return () => clearTimeout(timer);
   }, [tempColor]);
   return (
@@ -56,7 +52,7 @@ function App() {
                 <img src={viteLogo} className="logo" alt="Vite logo" />
               </a>
               <a href="https://react.dev" target="_blank">
-                <img src={reactLogo} className="logo" alt="React logo"/>
+                <img src={reactLogo} className="reactlogo" alt="React logo"/>
               </a>
             </div>
             <div className="textout">
